@@ -415,7 +415,7 @@ def slide_closing(prs, total, page):
     tf = textbox(slide, MARGIN, Inches(6.24), Inches(11.0), Inches(0.7))
     para(tf, "材料：知乎「为什么一部分人向往广东？」· 答主欧卡老司机 · 编辑于 2026-11-03",
          size=11.5, color=RGBColor(0x70, 0x8C, 0xA6), space_after=4, first=True)
-    para(tf, "评论区 79 条回复见 files/案例文章/备份2/　·　回答页 PDF 见 备份3/",
+    para(tf, "评论区 79 条回复见 files/案例文章/备份2-完整评论区截图13p-完整评论区截图13p/　·　回答页 PDF 见 备份3/",
          size=11.5, color=RGBColor(0x70, 0x8C, 0xA6), space_after=0)
 
 
