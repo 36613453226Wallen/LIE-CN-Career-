@@ -141,7 +141,7 @@ def write_original_docx(case: dict, case_dir: Path, images: list[Path], dest: Pa
             body(doc, f"注：{u['note']}", size=9, color=SLATE, after=6)
 
     heading(doc, "评论原图", 13)
-    body(doc, "下面是备份1里的原图，不转录为唯一正文。", size=10, color=SLATE)
+    body(doc, "下面是备份1-手机滚动截图太长识别会出错2张 里的原图，不转录为唯一正文。", size=10, color=SLATE)
     for img in images:
         add_picture_keep_ratio(doc, img)
 
@@ -487,7 +487,7 @@ def write_ocr_md(case: dict, dest: Path):
 def main():
     case_dir = ROOT / "01巴掌大的地方没有存在的必要"
     case = json.loads((case_dir / "案例数据.json").read_text(encoding="utf-8"))
-    backup = ROOT.parents[0] / "备份1"
+    backup = ROOT.parents[0] / "备份1-手机滚动截图太长识别会出错2张"
     images = [backup / "图1-评论区.jpg", backup / "图2-评论区.jpg"]
     pdf = case_dir / f"{case['year']}-{case['id']:02d}{case['short_title']}.pdf"
     original_docx = case_dir / f"{case['id']:02d}{case['short_title']}.docx"
