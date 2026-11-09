@@ -1,0 +1,28 @@
+{
+  "title": "案例文章目录",
+  "updated_at": "2026-11-09",
+  "articles": [
+    {
+      "id": 1,
+      "short_title": "巴掌大的地方没有存在的必要",
+      "snapshot_at": "2026-11-09",
+      "classified": "事实与观点",
+      "folder": "files/案例文章/案例文章目录/01巴掌大的地方没有存在的必要/",
+      "pdf": "2026-01巴掌大的地方没有存在的必要.pdf",
+      "docx": "01巴掌大的地方没有存在的必要.docx",
+      "classified_docx": "01分类好文段-事实与观点.docx",
+      "classified_md": "01分类好文段-事实与观点.md",
+      "classified_canvas": "https://cursor.com/canvas/store-0e891792-2731-40a9-9208-25ac3c391999/266861d2-a728-48fd-9308-06ee9bca0c67",
+      "backup": "files/案例文章/备份1/",
+      "original_url": "未见",
+      "missing": [
+        "原文链接",
+        "完整问题标题",
+        "问题描述",
+        "原回答正文",
+        "首次发布时间",
+        "原作者"
+      ]
+    }
+  ]
+}
