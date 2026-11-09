@@ -19,14 +19,14 @@
       "v2_ocr_color_docx": "01V2-OCR人名分色.docx",
       "classified_canvas": "https://cursor.com/canvas/store-0e891792-2731-40a9-9208-25ac3c391999/266861d2-a728-48fd-9308-06ee9bca0c67",
       "backup": "files/案例文章/备份1/",
-      "original_url": "未见",
+      "backup_comments": "files/案例文章/备份2/",
+      "backup_article_pdf": "files/案例文章/备份3/FireShot-044-为什么一部分人向往广东.pdf",
+      "original_url": "https://www.zhihu.com/question/399248934/answer/20877866270200881552",
+      "question_title": "为什么一部分人向往广东？",
+      "author": "欧卡老司机",
       "missing": [
-        "原文链接",
-        "完整问题标题",
-        "问题描述",
-        "原回答正文",
-        "首次发布时间",
-        "原作者"
+        "完整问题描述",
+        "首次发布时间"
       ]
     }
   ]

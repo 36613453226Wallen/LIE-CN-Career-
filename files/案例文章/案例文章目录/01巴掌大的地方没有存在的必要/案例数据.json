@@ -4,21 +4,18 @@
   "year": 2026,
   "snapshot_at": "2026-11-09",
   "first_published": "未见",
-  "edited_at": "未见",
-  "original_url": "未见",
-  "question_title": "未见完整问题页。评论回复页顶部可见原帖摘录。",
-  "question_description": "未见",
-  "author": "未见原回答作者",
-  "platform": "知乎评论回复页（截图）",
+  "edited_at": "2026-11-03 10:28",
+  "original_url": "https://www.zhihu.com/question/399248934/answer/20877866270200881552",
+  "question_title": "为什么一部分人向往广东？",
+  "question_description": "FireShot 长截图从回答正文起，未见完整问题描述区。",
+  "author": "欧卡老司机",
+  "platform": "知乎",
   "backup_folder": "files/案例文章/备份1",
+  "article_pdf": "files/案例文章/备份3/FireShot-044-为什么一部分人向往广东.pdf",
   "ocr_note": "两张图都很窄（约 216×1024、232×1024）。Tesseract 中文几乎不可用。正文按视觉识读转写，不稳定处标存疑，不把猜测写成定稿。图1与图2在「青山绿水／63922人」一条上重叠。",
   "missing": [
-    "原文链接",
-    "完整问题标题",
-    "问题描述",
-    "原回答正文（只有评论区）",
-    "首次发布时间",
-    "原作者"
+    "完整问题描述",
+    "首次发布时间"
   ],
   "source_images": [
     {
