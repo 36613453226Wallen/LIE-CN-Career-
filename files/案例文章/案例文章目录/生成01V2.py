@@ -12,7 +12,9 @@ from collections import defaultdict
 from pathlib import Path
 
 from docx import Document
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.shared import Inches, RGBColor
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parent
 CASE_DIR = ROOT / "01巴掌大的地方没有存在的必要"
@@ -69,6 +71,36 @@ def set_doc_margins(doc):
     section.bottom_margin = Inches(0.7)
     section.left_margin = Inches(0.75)
     section.right_margin = Inches(0.75)
+
+
+def case_images(case: dict) -> list[tuple[Path, str]]:
+    out = []
+    for item in case.get("source_images") or []:
+        name = Path(item.get("file") or "").name
+        local = CASE_DIR / name
+        if not local.exists():
+            continue
+        caption = " ".join(part for part in (item.get("id"), item.get("role")) if part)
+        out.append((local, caption or name))
+    return out
+
+
+def add_picture_keep_ratio(doc, path: Path, caption: str, max_width_in=2.4):
+    """Phone screenshots: keep ratio, cap height so one image stays readable on a page."""
+    im = Image.open(path)
+    w, h = im.size
+    im.close()
+    width = max_width_in
+    height = width * (h / w)
+    if height > 8.8:
+        height = 8.8
+        width = height * (w / h)
+    p = doc.add_paragraph()
+    compact(p, after=4, line=1.0, align=WD_ALIGN_PARAGRAPH.CENTER)
+    p.add_run().add_picture(str(path), width=Inches(width), height=Inches(height))
+    cap = doc.add_paragraph()
+    compact(cap, after=12, line=1.1, align=WD_ALIGN_PARAGRAPH.CENTER)
+    add_text(cap, caption, size=9, color=SLATE, italic=True)
 
 
 def heading(doc, text, size=16):
@@ -192,7 +224,12 @@ def write_v2_docx(case: dict, groups: list[dict], dest: Path):
     heading(doc, "01V2-分类好文段 · 事实与观点", 18)
     p = doc.add_paragraph()
     compact(p, after=8, line=1.18)
-    add_text(p, "01 原版保留。V2 按开头的人分组，箭头=回复。有人回复他才有次级「回复的人」。", size=10.5, color=INK)
+    add_text(
+        p,
+        "01 原版保留。V2 按开头的人分组，箭头=回复。有人回复他才有次级「对侧回复人」。网页里点对侧某人，只看两人按时间轴的对话。文末附原评论截图。",
+        size=10.5,
+        color=INK,
+    )
     for g in groups:
         heading(doc, g["name"], 14)
         p = doc.add_paragraph()
@@ -232,6 +269,24 @@ def write_v2_docx(case: dict, groups: list[dict], dest: Path):
             p = doc.add_paragraph()
             compact(p, after=8, line=1.15)
             add_text(p, "没有人回复他，故无次级选项。", size=10, color=SLATE)
+
+    heading(doc, "评论原图", 14)
+    p = doc.add_paragraph()
+    compact(p, after=8, line=1.18)
+    add_text(
+        p,
+        "文段之后附原评论截图，按手机竖图比例缩小，方便对照 OCR，不重排原图。",
+        size=10.5,
+        color=INK,
+    )
+    images = case_images(case)
+    if not images:
+        p = doc.add_paragraph()
+        compact(p, after=8, line=1.15)
+        add_text(p, "未见截图文件。", size=10, color=SLATE)
+    for path, caption in images:
+        add_picture_keep_ratio(doc, path, caption)
+
     doc.core_properties.title = "01V2-分类好文段-事实与观点"
     doc.save(dest)
 
@@ -336,6 +391,10 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
   .item { padding:8px 0; border-bottom:1px solid var(--line); }
   .item:last-child { border-bottom:0; }
   .item b { font-size:12px; color:var(--muted); }
+  .item.talk { border-radius:10px; padding:10px 12px; margin:8px 0; border:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .item.talk.head { background:#f3f7fb; border-left:3px solid var(--navy); }
+  .item.talk.other { background:#fff8f1; border-left:3px solid #c05621; }
+  .who { display:inline-block; margin-right:8px; color:var(--ink); font-weight:650; }
   blockquote { margin:6px 0 0; padding:0; border:0; }
   .empty { color:var(--muted); font-size:13px; padding:6px 0; }
   footer { margin-top:28px; color:var(--muted); font-size:12px; }
@@ -345,7 +404,7 @@ HTML_TEMPLATE = r"""<!DOCTYPE html>
 <main>
   <h1>01V2-分类好文段 · 事实与观点</h1>
   <p class="sub">__SUB__</p>
-  <div class="note">01 原版未改。V2 按<strong>开头的人</strong>分组。箭头=回复。次级选项只有「有人回复了他」才出现。</div>
+  <div class="note">01 原版未改。V2 按<strong>开头的人</strong>分组。箭头=回复。对侧回复人只列出回复了他的人。点某个对侧回复人后，只显示这两人按时间轴的对话，不列本人全部回复。</div>
   <div class="toolbar" id="heads"></div>
   <p class="hint" id="subhint"></p>
   <div class="subbar" id="repliers"></div>
@@ -358,8 +417,17 @@ const DATA = JSON.parse(document.getElementById("payload").textContent);
 let head = "全部";
 let replier = "全部回复";
 
+function speakerOf(u) { return u.speaker_canon || u.speaker || ""; }
+function targetOf(u) { return u.reply_to_canon || u.reply_to || ""; }
 function visibleGroups() {
   return head === "全部" ? DATA.groups : DATA.groups.filter(g => g.name === head);
+}
+function pairTalk(a, b) {
+  return (DATA.utterances || []).filter(u => {
+    const s = speakerOf(u);
+    const t = targetOf(u);
+    return (s === a && t === b) || (s === b && t === a);
+  }).sort((x, y) => x.id.localeCompare(y.id, undefined, {numeric: true}));
 }
 function renderHeads() {
   const labels = ["全部", ...DATA.groups.map(g => g.name)];
@@ -380,11 +448,11 @@ function renderRepliers() {
   if (!g || !g.has_replies) {
     bar.innerHTML = "";
     hint.textContent = (!g || head === "全部")
-      ? "先点一个开头的人。只有被回复过的人才会出现「回复他的人」。"
+      ? "先点一个开头的人。只有被回复过的人才会出现对侧回复人。"
       : `${head} 没有被回复，所以没有次级选项。`;
     return;
   }
-  hint.textContent = `次级：回复 ${head} 的人`;
+  hint.textContent = `对侧回复人：只列出回复了「${head}」的人。点其中一人，只看这两人按时间轴的对话，不列本人全部回复。`;
   const labels = ["全部回复", ...g.repliers.map(r => r.name)];
   bar.innerHTML = labels.map(l =>
     `<button class="pill secondary" data-replier="${l}" aria-pressed="${replier===l}">${l}</button>`
@@ -393,23 +461,39 @@ function renderRepliers() {
     btn.onclick = () => { replier = btn.dataset.replier; render(); };
   });
 }
-function itemHtml(u) {
-  const target = u.reply_to ? ` · 回复 ${u.reply_to_canon || u.reply_to}` : " · 顶层";
-  return `<div class="item"><b>${u.id}${target} · ${u.kind} · 置信${u.ocr_confidence}</b><blockquote>${u.text}</blockquote></div>`;
+function itemHtml(u, opts) {
+  opts = opts || {};
+  const speaker = speakerOf(u);
+  const target = targetOf(u);
+  const targetBit = target ? `回复 ${target}` : "顶层";
+  const who = opts.showSpeaker ? `<span class="who">${speaker}</span>` : "";
+  const side = opts.head && speaker === opts.head ? "talk head" : (opts.showSpeaker ? "talk other" : "");
+  return `<div class="item ${side}"><b>${who}${u.id} · ${targetBit} · ${u.kind} · 置信${u.ocr_confidence}</b><blockquote>${u.text}</blockquote></div>`;
+}
+function renderPairBoard(g) {
+  const items = pairTalk(head, replier);
+  const body = items.map(u => itemHtml(u, {showSpeaker: true, head})).join("")
+    || `<div class="empty">这两人没有互相回复的发言。</div>`;
+  document.getElementById("board").innerHTML = `<details class="group" open>
+    <summary>${head} × ${replier}<span class="meta">两人对话 ${items.length} 条 · 按时间轴</span></summary>
+    <p class="meta">只显示 ${head} 与 ${replier} 互相回复的发言，不列本人全部回复。对侧回复人选项仍在上方。</p>
+    ${body}
+  </details>`;
 }
 function renderBoard() {
+  if (head !== "全部" && replier !== "全部回复") {
+    const g = DATA.groups.find(x => x.name === head);
+    if (g) { renderPairBoard(g); return; }
+  }
   const groups = visibleGroups();
   document.getElementById("board").innerHTML = groups.map(g => {
-    const own = g.own.map(itemHtml).join("") || `<div class="empty">这个人在截图里没有本人发言，只有别人回复他。</div>`;
+    const own = g.own.map(u => itemHtml(u)).join("") || `<div class="empty">这个人在截图里没有本人发言，只有别人回复他。</div>`;
     let repliesBlock = "";
     if (g.has_replies) {
-      const repliers = (head !== "全部" && replier !== "全部回复")
-        ? g.repliers.filter(r => r.name === replier)
-        : g.repliers;
-      repliesBlock = `<p class="meta">回复他的人</p>` + repliers.map(r => `
+      repliesBlock = `<p class="meta">对侧回复人</p>` + g.repliers.map(r => `
         <details class="reply" open>
           <summary>回复 · ${r.name}<span class="meta">${r.items.length}</span></summary>
-          ${r.items.map(itemHtml).join("")}
+          ${r.items.map(u => itemHtml(u)).join("")}
         </details>`).join("");
     } else {
       repliesBlock = `<div class="empty">没有人回复他，故无次级选项。</div>`;
@@ -445,11 +529,12 @@ def annotate_utterances(utterances: list[dict]) -> list[dict]:
     return out
 
 
-def write_v2_html(case: dict, groups: list[dict], dest: Path):
+def write_v2_html(case: dict, groups: list[dict], utterances: list[dict], dest: Path):
     payload = {
         "short_title": case["short_title"],
         "snapshot_at": case["snapshot_at"],
         "groups": groups,
+        "utterances": utterances,
     }
     blob = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("<", "\\u003c")
     html = HTML_TEMPLATE.replace(
@@ -468,13 +553,26 @@ def main():
 
     write_v2_md(case, groups, CASE_DIR / "01V2-分类好文段-事实与观点.md")
     write_v2_docx(case, groups, CASE_DIR / "01V2-分类好文段-事实与观点.docx")
-    write_v2_html(case, groups, CASE_DIR / "01V2-分类好文段-事实与观点.html")
+    write_v2_html(case, groups, utterances, CASE_DIR / "01V2-分类好文段-事实与观点.html")
     write_colored_ocr_docx(case, names, colors, CASE_DIR / "01V2-OCR人名分色.docx")
 
     print("groups", len(groups))
     for g in groups:
         print(f"  {g['name']}: own={len(g['own'])} replies={len(g['replies'])} repliers={[r['name'] for r in g['repliers']]}")
     print("names", names)
+    samples = [
+        ("地委最强洗地", "青山绿水"),
+        ("地委最强洗地", "颜乐师傅小张"),
+        ("地委最强洗地", "止水之狩"),
+        ("地委最强洗地", "涂涂老师"),
+    ]
+    for a, b in samples:
+        ids = [
+            u["id"]
+            for u in utterances
+            if {u.get("speaker_canon"), u.get("reply_to_canon")} == {a, b}
+        ]
+        print(f"pair {a} x {b}: {ids}")
 
 
 if __name__ == "__main__":
