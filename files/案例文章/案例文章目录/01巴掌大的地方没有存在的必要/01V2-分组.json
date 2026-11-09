@@ -1,0 +1,656 @@
+[
+  {
+    "name": "地委最强洗地",
+    "has_replies": true,
+    "own": [
+      {
+        "id": "u03",
+        "speaker": "地委最强洗地",
+        "reply_to": "青山绿水",
+        "text": "那有什么，我当兵就是人民公社办公室看报纸报到的，哪怕你这划的地方比一亩还要小呢。",
+        "kind": "观点",
+        "ocr_confidence": "中"
+      },
+      {
+        "id": "u07",
+        "speaker": "地委最强洗地",
+        "reply_to": "经过人生",
+        "text": "工厂不发工资，钱还是学校发的，乡镇企业，初中校办企业。",
+        "kind": "事实",
+        "ocr_confidence": "中"
+      },
+      {
+        "id": "u08",
+        "speaker": "地委最强洗地",
+        "reply_to": "反包扎皮车",
+        "text": "还说当年的新说是从太阳照明大理矿石炼金后迁到山东，迁到大洋那边找一个考试的，有大工厂，人走也消了。",
+        "kind": "存疑",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u13",
+        "speaker": "地委最强洗地",
+        "reply_to": "反包扎皮车",
+        "text": "我的上大学比工作辛苦。",
+        "kind": "观点",
+        "ocr_confidence": "中"
+      },
+      {
+        "id": "u18",
+        "speaker": "地委最强洗地",
+        "reply_to": "",
+        "text": "拿到房子，6m。",
+        "kind": "存疑",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u20",
+        "speaker": "地委最强洗地",
+        "reply_to": "颜乐师傅小张",
+        "text": "因为大家消失了并且出生人口少，2025年上半年华阴全部出生儿35人，放轻松也不是华阴啊。",
+        "kind": "事实+观点",
+        "ocr_confidence": "中"
+      },
+      {
+        "id": "u21",
+        "speaker": "地委最强洗地",
+        "reply_to": "颜乐师傅小张",
+        "text": "所以这样也快乐，依然是那一片。我只问下这些人IE房子，不是生活的资金，虽然不太放心。从拿的W到电车到东北的刀达，不堵车不过20分钟。",
+        "kind": "事实+观点",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u27",
+        "speaker": "地委最强洗地",
+        "reply_to": "止水之狩",
+        "text": "夏天，人红马老师我跟他说的，当时我按取直说他们办公室。",
+        "kind": "存疑",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u28",
+        "speaker": "地委最强洗地",
+        "reply_to": "止水之狩",
+        "text": "人家说当地品质产业还是那点洋样的丁丁和货，食品行业工厂，和几个电器工厂，一到夏天晚上都上班，值了。弄得学校还不让老师上班，像你说的城市也确实没有条件比太阳。评级过程中，三产。",
+        "kind": "事实+观点",
+        "ocr_confidence": "中"
+      },
+      {
+        "id": "u29",
+        "speaker": "地委最强洗地",
+        "reply_to": "止水之狩",
+        "text": "口只剩一个行政区还在县城。现在不还万人，只是说厂开地跟着走，后来爱河酒庄又把日本大的地边清河。黎且，真是县镇，都没有存在的必要。",
+        "kind": "事实+观点",
+        "ocr_confidence": "中"
+      }
+    ],
+    "repliers": [
+      {
+        "name": "青山绿水",
+        "items": [
+          {
+            "id": "u02",
+            "speaker": "青山绿水",
+            "reply_to": "地委最强洗地",
+            "text": "虽然是新城人口也没有那么少，但你的发地也不大。我查了一下，2025年华阴市出生人口是63922人。",
+            "kind": "事实+观点",
+            "ocr_confidence": "中"
+          }
+        ]
+      },
+      {
+        "name": "涂涂老师",
+        "items": [
+          {
+            "id": "u09",
+            "speaker": "涂涂老师",
+            "reply_to": "地委最强洗地",
+            "text": "这个专业是从工厂 fly？",
+            "kind": "态度或追问",
+            "ocr_confidence": "低"
+          }
+        ]
+      },
+      {
+        "name": "颜乐师傅小张",
+        "items": [
+          {
+            "id": "u19",
+            "speaker": "颜乐师傅小张",
+            "reply_to": "地委最强洗地",
+            "text": "拿到我只认乐，个人，小x，而且他也不在乎新鲜的话，他在乎……",
+            "kind": "存疑",
+            "ocr_confidence": "低"
+          }
+        ]
+      },
+      {
+        "name": "黎且大",
+        "items": [
+          {
+            "id": "u23",
+            "speaker": "黎且大",
+            "reply_to": "地委最强洗地",
+            "text": "35人",
+            "kind": "事实",
+            "ocr_confidence": "高"
+          }
+        ]
+      },
+      {
+        "name": "止水之狩",
+        "items": [
+          {
+            "id": "u25",
+            "speaker": "止水之狩",
+            "reply_to": "地委最强洗地之族",
+            "text": "35人只够……这是最强洗地之族。",
+            "kind": "观点",
+            "ocr_confidence": "中"
+          }
+        ]
+      },
+      {
+        "name": "西之西沙包",
+        "items": [
+          {
+            "id": "u26",
+            "speaker": "西之西沙包",
+            "reply_to": "地委最强洗地",
+            "text": "55个，不切刀了。",
+            "kind": "存疑",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 6
+  },
+  {
+    "name": "颜乐师傅小张",
+    "has_replies": true,
+    "own": [
+      {
+        "id": "u19",
+        "speaker": "颜乐师傅小张",
+        "reply_to": "地委最强洗地",
+        "text": "拿到我只认乐，个人，小x，而且他也不在乎新鲜的话，他在乎……",
+        "kind": "存疑",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u24",
+        "speaker": "颜乐师傅小张",
+        "reply_to": "昵称好难",
+        "text": "人家从去年就说我这地方还穷，不然这有一年多早就搬家了。",
+        "kind": "观点",
+        "ocr_confidence": "中"
+      }
+    ],
+    "repliers": [
+      {
+        "name": "地委最强洗地",
+        "items": [
+          {
+            "id": "u20",
+            "speaker": "地委最强洗地",
+            "reply_to": "颜乐师傅小张",
+            "text": "因为大家消失了并且出生人口少，2025年上半年华阴全部出生儿35人，放轻松也不是华阴啊。",
+            "kind": "事实+观点",
+            "ocr_confidence": "中"
+          },
+          {
+            "id": "u21",
+            "speaker": "地委最强洗地",
+            "reply_to": "颜乐师傅小张",
+            "text": "所以这样也快乐，依然是那一片。我只问下这些人IE房子，不是生活的资金，虽然不太放心。从拿的W到电车到东北的刀达，不堵车不过20分钟。",
+            "kind": "事实+观点",
+            "ocr_confidence": "低"
+          }
+        ]
+      },
+      {
+        "name": "涂涂老师",
+        "items": [
+          {
+            "id": "u04",
+            "speaker": "涂涂老师",
+            "reply_to": "颜乐师傅小张",
+            "text": "出殡送葬给这些钱就挺难的。而且他们这边都退休了，房子都绿化了。",
+            "kind": "事实+观点",
+            "ocr_confidence": "低"
+          }
+        ]
+      },
+      {
+        "name": "阿莱米塔的小琪琪",
+        "items": [
+          {
+            "id": "u10",
+            "speaker": "阿莱米塔的小琪琪",
+            "reply_to": "颜乐师傅小张",
+            "text": "哥迷弟一届也不少。",
+            "kind": "存疑",
+            "ocr_confidence": "低"
+          }
+        ]
+      },
+      {
+        "name": "赵含羽",
+        "items": [
+          {
+            "id": "u22",
+            "speaker": "赵含羽",
+            "reply_to": "颜乐师傅小张",
+            "text": "B君从去年就开始租房和房子的，一年10，靠着有钱的表亲润欧洲。",
+            "kind": "事实",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 5
+  },
+  {
+    "name": "止水之狩",
+    "has_replies": true,
+    "own": [
+      {
+        "id": "u25",
+        "speaker": "止水之狩",
+        "reply_to": "地委最强洗地之族",
+        "text": "35人只够……这是最强洗地之族。",
+        "kind": "观点",
+        "ocr_confidence": "中"
+      }
+    ],
+    "repliers": [
+      {
+        "name": "地委最强洗地",
+        "items": [
+          {
+            "id": "u27",
+            "speaker": "地委最强洗地",
+            "reply_to": "止水之狩",
+            "text": "夏天，人红马老师我跟他说的，当时我按取直说他们办公室。",
+            "kind": "存疑",
+            "ocr_confidence": "低"
+          },
+          {
+            "id": "u28",
+            "speaker": "地委最强洗地",
+            "reply_to": "止水之狩",
+            "text": "人家说当地品质产业还是那点洋样的丁丁和货，食品行业工厂，和几个电器工厂，一到夏天晚上都上班，值了。弄得学校还不让老师上班，像你说的城市也确实没有条件比太阳。评级过程中，三产。",
+            "kind": "事实+观点",
+            "ocr_confidence": "中"
+          },
+          {
+            "id": "u29",
+            "speaker": "地委最强洗地",
+            "reply_to": "止水之狩",
+            "text": "口只剩一个行政区还在县城。现在不还万人，只是说厂开地跟着走，后来爱河酒庄又把日本大的地边清河。黎且，真是县镇，都没有存在的必要。",
+            "kind": "事实+观点",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 3
+  },
+  {
+    "name": "反包扎皮车",
+    "has_replies": true,
+    "own": [],
+    "repliers": [
+      {
+        "name": "地委最强洗地",
+        "items": [
+          {
+            "id": "u08",
+            "speaker": "地委最强洗地",
+            "reply_to": "反包扎皮车",
+            "text": "还说当年的新说是从太阳照明大理矿石炼金后迁到山东，迁到大洋那边找一个考试的，有大工厂，人走也消了。",
+            "kind": "存疑",
+            "ocr_confidence": "低"
+          },
+          {
+            "id": "u13",
+            "speaker": "地委最强洗地",
+            "reply_to": "反包扎皮车",
+            "text": "我的上大学比工作辛苦。",
+            "kind": "观点",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 2
+  },
+  {
+    "name": "青山绿水",
+    "has_replies": true,
+    "own": [
+      {
+        "id": "u02",
+        "speaker": "青山绿水",
+        "reply_to": "地委最强洗地",
+        "text": "虽然是新城人口也没有那么少，但你的发地也不大。我查了一下，2025年华阴市出生人口是63922人。",
+        "kind": "事实+观点",
+        "ocr_confidence": "中"
+      }
+    ],
+    "repliers": [
+      {
+        "name": "地委最强洗地",
+        "items": [
+          {
+            "id": "u03",
+            "speaker": "地委最强洗地",
+            "reply_to": "青山绿水",
+            "text": "那有什么，我当兵就是人民公社办公室看报纸报到的，哪怕你这划的地方比一亩还要小呢。",
+            "kind": "观点",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 1
+  },
+  {
+    "name": "经过人生",
+    "has_replies": true,
+    "own": [
+      {
+        "id": "u05",
+        "speaker": "经过人生",
+        "reply_to": "",
+        "text": "不是5万？",
+        "kind": "态度或追问",
+        "ocr_confidence": "中"
+      }
+    ],
+    "repliers": [
+      {
+        "name": "地委最强洗地",
+        "items": [
+          {
+            "id": "u07",
+            "speaker": "地委最强洗地",
+            "reply_to": "经过人生",
+            "text": "工厂不发工资，钱还是学校发的，乡镇企业，初中校办企业。",
+            "kind": "事实",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 1
+  },
+  {
+    "name": "阿莱米塔的小琪琪",
+    "has_replies": true,
+    "own": [
+      {
+        "id": "u10",
+        "speaker": "阿莱米塔的小琪琪",
+        "reply_to": "颜乐师傅小张",
+        "text": "哥迷弟一届也不少。",
+        "kind": "存疑",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u12",
+        "speaker": "阿莱米塔的小琪琪",
+        "reply_to": "游夏",
+        "text": "对这小巴掌大的一摊，这个小巴掌摊多少，没有生活压力的话，一天放一个周末，正个活。",
+        "kind": "观点",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u14",
+        "speaker": "阿莱米塔的小琪琪",
+        "reply_to": "BurningRose",
+        "text": "放寒假放暑假过。",
+        "kind": "事实",
+        "ocr_confidence": "中"
+      },
+      {
+        "id": "u16",
+        "speaker": "阿莱米塔的小琪琪",
+        "reply_to": "",
+        "text": "哥迷弟一届，别人放假了。",
+        "kind": "存疑",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u17",
+        "speaker": "阿莱米塔的小琪琪",
+        "reply_to": "飞飞",
+        "text": "挺好的。只是重力而行之难。东西还好，也不见得个个都R。",
+        "kind": "观点",
+        "ocr_confidence": "低"
+      }
+    ],
+    "repliers": [
+      {
+        "name": "BurningRose",
+        "items": [
+          {
+            "id": "u15",
+            "speaker": "BurningRose",
+            "reply_to": "阿莱米塔的小琪琪",
+            "text": "对这小巴掌大的一摊，这个小摊不多，厂里有十来个厂子两三摊了。",
+            "kind": "事实+观点",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 1
+  },
+  {
+    "name": "BurningRose",
+    "has_replies": true,
+    "own": [
+      {
+        "id": "u11",
+        "speaker": "BurningRose",
+        "reply_to": "",
+        "text": "这来学校宿舍这么近，还有15。",
+        "kind": "事实",
+        "ocr_confidence": "中"
+      },
+      {
+        "id": "u15",
+        "speaker": "BurningRose",
+        "reply_to": "阿莱米塔的小琪琪",
+        "text": "对这小巴掌大的一摊，这个小摊不多，厂里有十来个厂子两三摊了。",
+        "kind": "事实+观点",
+        "ocr_confidence": "中"
+      }
+    ],
+    "repliers": [
+      {
+        "name": "阿莱米塔的小琪琪",
+        "items": [
+          {
+            "id": "u14",
+            "speaker": "阿莱米塔的小琪琪",
+            "reply_to": "BurningRose",
+            "text": "放寒假放暑假过。",
+            "kind": "事实",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 1
+  },
+  {
+    "name": "游夏",
+    "has_replies": true,
+    "own": [],
+    "repliers": [
+      {
+        "name": "阿莱米塔的小琪琪",
+        "items": [
+          {
+            "id": "u12",
+            "speaker": "阿莱米塔的小琪琪",
+            "reply_to": "游夏",
+            "text": "对这小巴掌大的一摊，这个小巴掌摊多少，没有生活压力的话，一天放一个周末，正个活。",
+            "kind": "观点",
+            "ocr_confidence": "低"
+          }
+        ]
+      }
+    ],
+    "reply_count": 1
+  },
+  {
+    "name": "飞飞",
+    "has_replies": true,
+    "own": [],
+    "repliers": [
+      {
+        "name": "阿莱米塔的小琪琪",
+        "items": [
+          {
+            "id": "u17",
+            "speaker": "阿莱米塔的小琪琪",
+            "reply_to": "飞飞",
+            "text": "挺好的。只是重力而行之难。东西还好，也不见得个个都R。",
+            "kind": "观点",
+            "ocr_confidence": "低"
+          }
+        ]
+      }
+    ],
+    "reply_count": 1
+  },
+  {
+    "name": "昵称好难",
+    "has_replies": true,
+    "own": [],
+    "repliers": [
+      {
+        "name": "颜乐师傅小张",
+        "items": [
+          {
+            "id": "u24",
+            "speaker": "颜乐师傅小张",
+            "reply_to": "昵称好难",
+            "text": "人家从去年就说我这地方还穷，不然这有一年多早就搬家了。",
+            "kind": "观点",
+            "ocr_confidence": "中"
+          }
+        ]
+      }
+    ],
+    "reply_count": 1
+  },
+  {
+    "name": "原帖（评论页顶部摘录）",
+    "has_replies": false,
+    "own": [
+      {
+        "id": "u01",
+        "speaker": "原帖（评论页顶部摘录）",
+        "reply_to": "",
+        "text": "如果你们打开地图看看，现在发江县新市镇区那巴掌大的地方，重庆、云南、贵州等地，我没有存在的必要",
+        "kind": "观点",
+        "ocr_confidence": "低"
+      }
+    ],
+    "repliers": [],
+    "reply_count": 0
+  },
+  {
+    "name": "涂涂老师",
+    "has_replies": false,
+    "own": [
+      {
+        "id": "u04",
+        "speaker": "涂涂老师",
+        "reply_to": "颜乐师傅小张",
+        "text": "出殡送葬给这些钱就挺难的。而且他们这边都退休了，房子都绿化了。",
+        "kind": "事实+观点",
+        "ocr_confidence": "低"
+      },
+      {
+        "id": "u09",
+        "speaker": "涂涂老师",
+        "reply_to": "地委最强洗地",
+        "text": "这个专业是从工厂 fly？",
+        "kind": "态度或追问",
+        "ocr_confidence": "低"
+      }
+    ],
+    "repliers": [],
+    "reply_count": 0
+  },
+  {
+    "name": "未见稳定用户名",
+    "has_replies": false,
+    "own": [
+      {
+        "id": "u06",
+        "speaker": "未见稳定用户名",
+        "reply_to": "",
+        "text": "这不是理工大学吗？进东北电网不少",
+        "kind": "存疑",
+        "ocr_confidence": "低"
+      }
+    ],
+    "repliers": [],
+    "reply_count": 0
+  },
+  {
+    "name": "赵含羽",
+    "has_replies": false,
+    "own": [
+      {
+        "id": "u22",
+        "speaker": "赵含羽",
+        "reply_to": "颜乐师傅小张",
+        "text": "B君从去年就开始租房和房子的，一年10，靠着有钱的表亲润欧洲。",
+        "kind": "事实",
+        "ocr_confidence": "中"
+      }
+    ],
+    "repliers": [],
+    "reply_count": 0
+  },
+  {
+    "name": "黎且大",
+    "has_replies": false,
+    "own": [
+      {
+        "id": "u23",
+        "speaker": "黎且大",
+        "reply_to": "地委最强洗地",
+        "text": "35人",
+        "kind": "事实",
+        "ocr_confidence": "高"
+      }
+    ],
+    "repliers": [],
+    "reply_count": 0
+  },
+  {
+    "name": "西之西沙包",
+    "has_replies": false,
+    "own": [
+      {
+        "id": "u26",
+        "speaker": "西之西沙包",
+        "reply_to": "地委最强洗地",
+        "text": "55个，不切刀了。",
+        "kind": "存疑",
+        "ocr_confidence": "中"
+      }
+    ],
+    "repliers": [],
+    "reply_count": 0
+  }
+]

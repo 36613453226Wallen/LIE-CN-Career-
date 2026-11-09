@@ -114,6 +114,8 @@ def generate():
             ("分类文段", item.get("classified_docx") or ""),
             ("可修改稿", item.get("classified_md") or ""),
             ("展示网页", item.get("classified_html") or ""),
+            ("01V2 网页", item.get("v2_html") or ""),
+            ("01V2 人名分色 OCR", item.get("v2_ocr_color_docx") or ""),
             ("可修改链接", item.get("classified_canvas") or ""),
             ("备份", item.get("backup") or ""),
             ("原文链接", item.get("original_url") or "未见"),
